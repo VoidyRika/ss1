@@ -1,5 +1,5 @@
 export default function handler(req, res){
-    const ip = req.headers["x-forward-for"]?.split(",")[0] ||
+    const ip = req.headers["x-forwarded-for"]?.split(",")[0] ||
     req.socket.remoteAddress;
 
 res.setHeader("Content-Type","text/html");
